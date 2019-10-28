@@ -1,0 +1,391 @@
+/*css reset*/
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    font-weight: normal;
+   }
+   table { border-collapse: collapse; border-spacing: 0; }
+   td, th, caption { font-weight: normal; text-align: left; }
+   img, fieldset { border: 0; }
+   ol { padding-left: 1.4em; list-style: decimal; }
+   ul { padding-left: 1.4em; list-style:square; }
+   q:before, q:after { content:''; }
+/*END css reset*/
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    /*background-image: url(graphics/grid.png);*/
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    min-width: 640px;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    
+   margin: 0 auto;
+   
+}
+
+#HideMenuBtn {
+    position: absolute;
+    background-image: url(graphics/hide_icon.png);
+    background-size: cover;
+    top: 0;
+    left: 0;
+    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.3);
+    width: 60px;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgba(1, 128, 18, 0.9);
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 1);
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px;
+    
+}
+#ShowMenuBtn {
+    position: absolute;
+    background-image: url(graphics/icon_menu.png);
+    background-size: cover;
+    top: 0;
+    left: 0;
+    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.3);
+    width: 60px;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgba(1, 128, 18, 0.9);
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 1);
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px;
+    
+}
+.menu button {
+    display: block;
+    background-image: url(graphics/tube_menu.png);
+    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.3);
+    background-size: cover;
+    width: 160px;
+    min-width: 160px;
+    height: 160px;
+    min-height: 160px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgba(1, 128, 18, 0.9);
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 0.0);
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2)
+
+}
+.menu button:nth-child(3) {
+    background-image: url(graphics/round_menu.png);
+}
+.menu button:nth-child(4) {
+    background-image: url(graphics/hex_menu.png);
+}
+.menu button:nth-child(5) {
+    background-image: url(graphics/square_menu.png);
+}
+.menu button:nth-child(6) {
+    background-image: url(graphics/sheet_menu.png);
+}
+.menu button:nth-child(7) {
+    background-image: url(graphics/corner_menu.png);
+}
+
+.menu button:hover {
+    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.1);
+    background-color: rgba(1, 128, 18, 0.9);
+    color: rgb(255, 255, 255);
+    transition: all 0.3s;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 100%;
+    background-color:  rgba(255, 210, 0, 0.5);
+    
+}
+ 
+.container .divider {
+    width: 100%;
+    display: block;
+    height: 0px;
+    border-bottom: 5px dotted #000;
+}
+ h1 {
+     margin-top: 20px;
+    font-size: 1.8em;
+    text-align: center;
+    color: rgba(1, 128, 18, 1);
+    font-weight: bold;
+    
+}
+.container h2 {
+    width: 60%;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 3px solid blue;
+    margin: 20px auto;
+
+    
+}
+
+.container img {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.container .form h3 {
+    display: block;
+    border-bottom: 3px solid blue;
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #0e9300;
+    width: 60%;
+    margin: 0 auto;
+}
+.container ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    
+}
+.container .form {
+   
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgba(255, 210, 0, 0.9);
+   
+    
+}
+.container .form .out-block {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 10%;
+    font-size: 1.5em;
+    text-align: center;
+    color: rgba(1, 128, 18, 1);
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+.container .form select {
+    width: 100%;
+    height: 40px;
+    font-size: 1em;
+    border: 3px solid black;
+}
+
+.container ul li {
+    text-align: right;
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-right: 20%;
+    margin-left: 10%;
+}
+.container ul li label {
+    font-size: 1em;
+    font-weight: bolder;
+}
+.container input {
+    width: 100px;
+    height: 40px;
+    font-size: 1em;
+    text-align: right;
+   /* margin-right: 100px;*/
+    margin-top: 20px;
+    border: 3px solid black;
+}
+.container .form .calc-btn {
+    display: block;
+    margin: 0 auto;
+    width: 280px;
+    height: 60px;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: rgba(1, 128, 18, 0);
+    color:  rgba(1, 128, 18, 1);
+    text-shadow: none;
+    border: 3px solid  rgba(1, 128, 18, 1);
+}
+
+.container .form .calc-btn:hover {
+    background-color: rgba(1, 128, 18, 1);
+    color:  rgba(255, 255, 255, 1);
+    font-weight: bold;
+    transition: all 0.3s;
+}
+.container .form .out input {
+    color: #0e9300;
+}
+
+.container .form .out label {
+    color: rgba(1, 128, 18, 1);
+}
+.container .form ul li label {
+    position: relative;
+}
+.container .form ul li label .alert-block {
+   width: 180px;
+    position: absolute;
+    color: #e01414;
+    font-size: .6em;
+    margin-left: 10px;
+    margin-top: 30px;
+    text-align: left;
+    
+}
+
+.container .form .resetBtn {
+    display: block;
+    width: 200px;
+    height: 60px;
+    background-color: rgba(255, 210, 0, 1);
+    border: 3px solid rgba(1, 128, 18, 0.7);
+    margin: 20px auto;
+    color: #000;
+    font-size: 1.1em;
+    
+
+}
+.hidden {
+    display: none;
+}
+
+.menu h1 {
+    width: 100%;
+}
+.menu .activated-btn {
+    display: block;
+    background-image: url(graphics/tube_menu.png);
+    background-size: cover;
+    width: 160px;
+    min-width: 160px;
+    height: 160px;
+    min-height: 160px;
+    border: 3px solid rgba(1, 128, 18, 0.9);
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px;
+    background-color: rgba(1, 128, 18, 0.9);
+    color: rgb(255, 255, 255);
+    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+/*стили мобильных*/
+@media only screen and (max-device-width: 480px) {
+    
+    body {
+        
+        height: 100%;
+        background-image: none;
+        
+    }
+    .mob-menu-backgr {
+        background-color: #fff;
+        width: 100%;
+        height: 80px;
+        position: fixed;
+        top: 0;    
+        z-index: 100;   
+    }
+    
+
+    .menu {
+        width: 100%;
+        background-color: #fff;
+        position: fixed;
+        z-index: 1000;
+        
+    }
+    .menu button {
+        margin: 10px;
+        height: 160px;
+        width: 160px;
+                   
+    }
+    
+    .menu .activated-btn {
+        margin: 10px;
+        height: 160px;
+        width: 160px;
+        font-size: 1.2em;
+    }
+    #HideMenuBtn, #ShowMenuBtn {
+        position: fixed;
+        z-index: 10000;
+    }
+    .container  .form {
+        width: 100%;
+                     
+    }
+    .container .img-mob {
+        width: 100%;
+        
+    }
+
+    .container .top-header {
+        margin-top: 80px;
+    }
+    .container .form ul li {
+        font-size: 1.6em;
+        margin-top: 3px;
+        margin-bottom: 10px;
+    }
+    .container .form input {
+        width: 180px;
+        height: 60px;
+        font-size: 1.3em;
+        text-align: right;
+       /* margin-right: 100px;*/
+       border: 3px solid black;
+        
+    }
+    
+    .container .form ul li label .alert-block {
+        width: 100px;
+    }
+    .container .form .calc-btn {
+        display: block;
+        margin: 20px auto;
+        width: 320px;
+        height: 80px;
+        font-size: 1.6em;
+        font-weight: bold;
+        background-color: rgba(1, 128, 18, 1);
+        color:  #fff;
+        
+    }
+    .container .form ul li select {
+        height: 60px;
+        font-size: 1em;
+    }
+    .container .form .out input {
+        width: 200px;
+        height: 60px;
+    }
+}

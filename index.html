@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор массы заготовок</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="calc.css">
+    <script src="calc.js" defer></script>
+</head>
+<body>
+    <button id="HideMenuBtn" class="hidden" ></button>
+    <button id="ShowMenuBtn" class="hidden" ></button>
+    <div class="mob-menu-backgr">
+        <h1>Калькулятор массы заготовок</h1>
+    </div>
+    <div id="menu-block" class="menu">
+         <h1>Выбор заготовки:</h1>
+        <button id="TubeBtn">Масса трубы</button>
+        <button id="RoundBtn">Масса круглого прутка</button>
+        <button id="HexBtn">Масса шестигранного прутка</button>
+        <button id="SquareBtn">Масса прямоугольной заготовки</button>
+        <button id="SheetBtn">Масса листа, плиты</button>
+        <button id="CornerBtn">Масса уголка</button>
+    </div>
+    
+
+    
+    <div id="tube" class="container hidden">
+        <div class="divider"></div>
+        <h2 class="top-header">Расчет массы трубы</h2>
+        <img class="img-mob" src="graphics/tube.png" alt="">
+        <div class="divider"></div>
+        <div class="form">
+             <h2>Введите исходные данные:</h2>
+            <form action="">
+                <ul>
+                    <li><label>D (Наружный диаметр трубы, мм): <input id="diametr" type="number" maxlength="10"><span class="alert-block" id="d-alert"></span></label></li>
+                    <li><label>S (Толщина стенки трубы, мм): <input id="thickness" type="number" maxlength="10" step="0.1"><span class="alert-block" id="t-alert"></span></label></span></li>
+                    <li><label>L (Длина трубы, мм): <input id="length" type="number" maxlength="10"><span class="alert-block" id="l-alert"></span></label></li>
+                    <li>
+                        <label>Материал трубы: 
+                            <select name="select" id="density">
+                                <option value="7920" selected>Нержавеющая сталь 12Х18Н10Т (7920 кг/м^3)</option> 
+                                <option value="2640">Алюминий АМг 6 (2640 кг/м^3)</option>
+                                <option value="2840">Алюминий 2219 (2840 кг/м^3)</option>
+                                <option value="1700">Углепластик (1700 кг/м^3)</option>
+                                <option value="2150">Фторопласт-4 (2150 кг/м^3)</option>
+                            </select>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+            <h3>Результат расчета:</h3>
+            <p class="out-block" id="out-block-tube"></p>
+            <ul class="out">
+                <li><label>Масса трубы, г: <input type="text" id="mas-g-out" maxlength="10" readonly></label></li>
+                <li><label>Масса трубы, кг: <input type="text" id="mas-kg-out" maxlength="10"readonly></label></li>
+            </ul>
+            <button class="calc-btn" id="calcTubeBtn" >Расчитать</button>
+            <button class="resetBtn" id="resetTubeBtn">Новый расчет</button>
+        </div>
+    </div>
+    
+    <div id="round" class="container hidden">
+            <div class="divider"></div>
+            <h2 class="top-header">Расчет массы прутка круглого сечения</h2>
+            <img class="img-mob" src="graphics/round.png" alt="">
+            <div class="divider"></div>
+            <div class="form">
+                <h2>Введите исходные данные:</h2>
+                <form action="">
+                    <ul>
+                        <li><label>D (Диаметр прутка, мм): <input id="diametr-round" type="number" maxlength="10"><span class="alert-block" id="d-alert-round"></span></label></li>
+                        <li><label>L (Длина прутка, мм): <input id="length-round" type="number" maxlength="10"><span class="alert-block" id="l-alert-round"></span></label></span></li>
+                        <li>
+                            <label>Материал прутка: 
+                                <select name="select" id="density-round">
+                                    <option value="7920" selected>Нержавеющая сталь 12Х18Н10Т (7920 кг/м^3)</option> 
+                                    <option value="2640">Алюминий АМг 6 (2640 кг/м^3)</option>
+                                    <option value="2840">Алюминий 2219 (2840 кг/м^3)</option>
+                                    <option value="1700">Углепластик (1700 кг/м^3)</option>
+                                    <option value="2150">Фторопласт-4 (2150 кг/м^3)</option>
+                                </select>
+                            </label>
+                        </li>
+                    </ul>
+                </form>
+                <h3>Результат расчета:</h3>
+                <p class="out-block" id="out-block-round"></p>
+                <ul class="out">
+                    <li><label>Масса прутка, г: <input type="text" id="mas-g-out-round" maxlength="10" readonly></label></li>
+                    <li><label>Масса прутка, кг: <input type="text" id="mas-kg-out-round" maxlength="10"readonly></label></li>
+                </ul>
+                <button class="calc-btn" id="calcRoundBtn">Расчитать</button>
+                <button class="resetBtn" id="resetRoundBtn">Новый расчет</button>
+            </div>
+        </div>
+    
+        <div id="hex" class="container hidden">
+            <div class="divider"></div>
+            <h2 class="top-header">Расчет массы шестигранного прутка</h2>
+            <img class="img-mob" src="graphics/hex.png" alt="">
+            <div class="divider"></div>
+            <div class="form">
+                <h2>Введите исходные данные:</h2>
+                <form action="">
+                    <ul>
+                        <li><label>S (Размер шестигранника (под ключ), мм): <input id="size-hex" type="number" maxlength="4"><span class="alert-block" id="d-alert-hex"></span></label></li>
+                        <li><label>L (Длина прутка, мм): <input id="length-hex" type="number" maxlength="6"><span class="alert-block" id="l-alert-hex"></span></label></li>
+                        <li>
+                            <label>Материал прутка: 
+                                <select name="select" id="density-hex">
+                                    <option value="7920" selected>Нержавеющая сталь 12Х18Н10Т (7920 кг/м^3)</option> 
+                                    <option value="2640">Алюминий АМг 6 (2640 кг/м^3)</option>
+                                    <option value="2840">Алюминий 2219 (2840 кг/м^3)</option>
+                                    <option value="1700">Углепластик (1700 кг/м^3)</option>
+                                    <option value="2150">Фторопласт-4 (2150 кг/м^3)</option>
+                                </select>
+                            </label>
+                        </li>
+                    </ul>
+                </form>
+                <h3>Результат расчета:</h3>
+                <p class="out-block" id="out-block-hex"></p>
+                <ul class="out">
+                    <li><label>Масса прутка, г: <input type="text" id="mas-g-out-hex" maxlength="10" readonly></label></li>
+                    <li><label>Масса прутка, кг: <input type="text" id="mas-kg-out-hex" maxlength="10"readonly></label></li>
+                </ul>
+                <button class="calc-btn" id="calcHexBtn">Расчитать</button>
+                <button class="resetBtn" id="resetHexBtn">Новый расчет</button>
+            </div>
+        </div>
+
+        <div id="square" class="container hidden">
+            <div class="divider"></div>
+            <h2 class="top-header">Расчет массы квадратного прутка (параллелепипеда)</h2>
+            <img class="img-mob" src="graphics/square.png" alt="">
+            <div class="divider"></div>
+            <div class="form">
+                <h2>Введите исходные данные:</h2>
+                <form action="">
+                    <ul>
+                        <li><label>A (Размер стороны, мм): <input id="dim-a-square" type="number" maxlength="4"><span class="alert-block" id="a-alert-square"></span></label></li>
+                        <li><label>B (Размер стороны, мм): <input id="dim-b-square" type="number" maxlength="4"><span class="alert-block" id="b-alert-square"></span></label></li>
+                        <li><label>L (Длина прутка, мм): <input id="length-square" type="number" maxlength="4"><span class="alert-block" id="l-alert-square"></span></label></li>
+                        <li>
+                            <label>Материал прутка: 
+                                <select name="select" id="density-square">
+                                    <option value="7920" selected>Нержавеющая сталь 12Х18Н10Т (7920 кг/м^3)</option> 
+                                    <option value="2640">Алюминий АМг 6 (2640 кг/м^3)</option>
+                                    <option value="2840">Алюминий 2219 (2840 кг/м^3)</option>
+                                    <option value="1700">Углепластик (1700 кг/м^3)</option>
+                                    <option value="2150">Фторопласт-4 (2150 кг/м^3)</option>
+                                </select>
+                            </label>
+                        </li>
+                    </ul>
+                </form>
+                <h3>Результат расчета:</h3>
+                <p class="out-block" id="out-block-square"></p>
+                <ul class="out">
+                    <li><label>Масса прутка, г: <input type="text" id="mas-g-out-square" maxlength="10" readonly></label></li>
+                    <li><label>Масса прутка, кг: <input type="text" id="mas-kg-out-square" maxlength="10"readonly></label></li>
+                </ul>
+                <button class="calc-btn" id="calcSquareBtn">Расчитать</button>
+                <button class="resetBtn" id="resetSquareBtn">Новый расчет</button>
+            </div>
+        </div>
+
+        <div id="sheet" class="container hidden">
+            <div class="divider"></div>
+            <h2 class="top-header">Расчет массы листа</h2>
+            <img class="img-mob" src="graphics/sheet.png" alt="">
+            <div class="divider"></div>
+            <div class="form">
+                <h2>Введите исходные данные:</h2>
+                <form action="">
+                    <ul>
+                        <li><label>S (Толщина листа, мм): <input id="dim-s-sheet" type="number" maxlength="4"><span class="alert-block" id="s-alert-sheet"></span></label></li>
+                        <li><label>B (Ширина листа, мм): <input id="dim-b-sheet" type="number" maxlength="4"><span class="alert-block" id="b-alert-sheet"></span></label></li>
+                        <li><label>L (Длина листа, мм): <input id="length-sheet" type="number" maxlength="4"><span class="alert-block" id="l-alert-sheet"></span></label></li>
+                        <li>
+                            <label>Материал листа: 
+                                <select name="select" id="density-sheet">
+                                    <option value="7920" selected>Нержавеющая сталь 12Х18Н10Т (7920 кг/м^3)</option> 
+                                    <option value="2640">Алюминий АМг 6 (2640 кг/м^3)</option>
+                                    <option value="2840">Алюминий 2219 (2840 кг/м^3)</option>
+                                    <option value="1700">Углепластик (1700 кг/м^3)</option>
+                                    <option value="2150">Фторопласт-4 (2150 кг/м^3)</option>
+                                </select>
+                            </label>
+                        </li>
+                    </ul>
+                </form>
+                <h3>Результат расчета:</h3>
+                <p class="out-block" id="out-block-sheet"></p>
+                <ul class="out">
+                    <li><label>Масса листа, г: <input type="text" id="mas-g-out-sheet" maxlength="10" readonly></label></li>
+                    <li><label>Масса листа, кг: <input type="text" id="mas-kg-out-sheet" maxlength="10"readonly></label></li>
+                    <li><label>Площадь листа, мм^2: <input type="text" id="sq-mm-out-sheet" maxlength="10"readonly></label></li>
+                    <li><label>Площадь листа, м^2: <input type="text" id="sq-m-out-sheet" maxlength="10"readonly></label></li>
+                </ul>
+                <button class="calc-btn" id="calcSheetBtn">Расчитать</button>
+                <button class="resetBtn" id="resetSheetBtn">Новый расчет</button>
+            </div>
+        </div>
+        
+
+        <div id="corner" class="container hidden">
+            <div class="divider"></div>
+            <h2 class="top-header">Расчет массы уголка</h2>
+            <img class="img-mob" src="graphics/corner.png" alt="">
+            <div class="divider"></div>
+            <div class="form">
+                <h2>Введите исходные данные:</h2>
+                <form action="">
+                    <ul>
+                        <li><label>A (Размер полки, мм): <input id="dim-a-corner" type="number" maxlength="4"><span class="alert-block" id="a-alert-corner"></span></label></li>
+                        <li><label>B (Размер полки, мм): <input id="dim-b-corner" type="number" maxlength="4"><span class="alert-block" id="b-alert-corner"></span></label></li>
+                        <li><label>S (Толщина, мм): <input id="dim-s-corner" type="number" maxlength="4"><span class="alert-block" id="s-alert-corner"></span></label></li>
+                        <li><label>L (Длина уголка, мм): <input id="length-corner" type="number" maxlength="4"><span class="alert-block" id="l-alert-corner"></span></label></li>
+                        <li>
+                            <label>Материал уголка: 
+                                <select name="select" id="density-corner">
+                                    <option value="7920" selected>Нержавеющая сталь 12Х18Н10Т (7920 кг/м^3)</option> 
+                                    <option value="2640">Алюминий АМг 6 (2640 кг/м^3)</option>
+                                    <option value="2840">Алюминий 2219 (2840 кг/м^3)</option>
+                                    <option value="1700">Углепластик (1700 кг/м^3)</option>
+                                    <option value="2150">Фторопласт-4 (2150 кг/м^3)</option>
+                                </select>
+                            </label>
+                        </li>
+                    </ul>
+                </form>
+                <h3>Результат расчета:</h3>
+                <p class="out-block" id="out-block-corner"></p>
+                <ul class="out">
+                    <li><label>Масса уголка, г: <input type="text" id="mas-g-out-corner" maxlength="10" readonly></label></li>
+                    <li><label>Масса уголка, кг: <input type="text" id="mas-kg-out-corner" maxlength="10"readonly></label></li>
+                </ul>
+                <button class="calc-btn" id="calcCornerBtn">Расчитать</button>
+                <button class="resetBtn" id="resetCornerBtn">Новый расчет</button>
+            </div>
+        </div>
+        
+</body>
+</html>
