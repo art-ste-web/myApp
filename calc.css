@@ -87,7 +87,8 @@ body {
     font-size: 1.1em;
     font-weight: bold;
     margin: 10px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2)
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 
 }
 .menu button:nth-child(3) {
